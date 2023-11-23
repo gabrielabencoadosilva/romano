@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reproduzir Música</title>
+</head>
+<body>
+    
+    <title>Alura MIDI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="bateria.png">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="estilos.css">
+
+<button id="playButton">Reproduzir Música</button>
+
+<audio id="myAudio">
+  <source src="OI BB.mp3" type="audio/mp3">
+  Seu navegador não suporta o elemento de áudio.
+</audio>
+
+<script>
+  // Obtém referências aos elementos do botão e áudio
+  const playButton = document.getElementById('playButton');
+  const myAudio = document.getElementById('myAudio');
+
+  // Adiciona um ouvinte de evento de clique ao botão
+  playButton.addEventListener('click', function() {
+    // Verifica se a música está pausada, se sim, reproduz; se não, pausa
+    if (myAudio.paused) {
+      myAudio.play();
+      playButton.textContent = 'Pausar Música';
+    } else {
+      myAudio.pause();
+      playButton.textContent = 'Reproduzir Música';
+    }
+  });
+</script>
+
+</body>
+</html>
